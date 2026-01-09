@@ -1,0 +1,142 @@
+---
+title: Getting Started with Test IO
+description: Set up your Test IO account and initiate your first testing project quickly to begin improving product quality.
+---
+
+## Prerequisites
+
+Before starting, ensure you have the following ready:
+
+<Callout kind="info">
+- A valid email address for account verification
+- Basic project details like app URL, testing objectives, and target devices
+- Access to your development or staging environment for testing links
+</Callout>
+
+Review the [introduction](/introduction) if you need an overview of Test IO's crowdtesting capabilities.
+
+## Sign Up and Verify Your Account
+
+Create your Test IO account in minutes.
+
+<Steps>
+  <Step title="Visit the Dashboard" icon="monitor">
+    Navigate to `https://dashboard.example.com/signup` and click **Sign Up**.
+
+    Fill in your details:
+    - Full name
+    - Company name
+    - Email address
+    - Password (at least 12 characters)
+  </Step>
+
+  <Step title="Verify Email" icon="mail">
+    Check your inbox for the verification email from Test IO.
+
+    Click the verification link. If it doesn't arrive within 5 minutes, check your spam folder.
+  </Step>
+
+  <Step title="Complete Profile" icon="user">
+    Log in at `https://dashboard.example.com/login`.
+
+    Update your profile with:
+    - Team size
+    - Industry
+    - Preferred testing regions
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Enable two-factor authentication immediately after signup for added security.
+</Callout>
+
+## Onboarding Walkthrough
+
+New users go through a guided onboarding to set up billing and preferences.
+
+<Tabs>
+  <Tab title="Standard Onboarding" icon="play-circle">
+    Follow the interactive tour in the dashboard:
+
+    1. Connect your billing method (credit card or invoice).
+    2. Select testing scopes (functional, exploratory, usability).
+    3. Choose default tester regions (global or specific like EU/US).
+
+    This takes about 5 minutes.
+  </Tab>
+
+  <Tab title="Enterprise Skip" icon="shield">
+    Enterprise users can skip via support ticket. Contact `support@example.com` with your contract ID.
+  </Tab>
+</Tabs>
+
+## Create Your First Test Cycle
+
+Launch your initial test cycle to engage Test IO's 400k+ tester community.
+
+<Steps>
+  <Step title="Navigate to Cycles" icon="list">
+    From the dashboard sidebar, select **Test Cycles** > **New Cycle**.
+  </Step>
+
+  <Step title="Configure Cycle Details" icon="settings">
+    Enter cycle parameters:
+
+    <ParamField path="name" param-type="string" required="true">
+      A descriptive name like `iOS App Release v2.1`.
+    </ParamField>
+
+    <ParamField path="app_url" param-type="string" required="true">
+      Your app or web URL, e.g., `https://staging.yourapp.com`.
+    </ParamField>
+
+    <ParamField path="duration_hours" param-type="number" required="false">
+      Test duration (default: 24 hours).
+    </ParamField>
+
+    Set severity levels and pass/fail criteria.
+  </Step>
+
+  <Step title="Submit Test Requirements and Devices" icon="smartphone">
+    Specify requirements:
+
+````json
+{
+  "requirements": [
+    "Verify login on iOS 15+ Safari",
+    "Test checkout flow on Android Chrome",
+    "Check responsiveness on tablets"
+  ],
+  "devices": [
+    "iPhone 14 (iOS 17)",
+    "Samsung Galaxy S23 (Android 14)",
+    "iPad Pro (iPadOS 17)"
+  ]
+}
+````
+
+    Review and click **Launch Cycle**.
+  </Step>
+</Steps>
+
+## Monitor and Next Steps
+
+Your cycle activates within minutes. Track progress in real-time via the dashboard.
+
+<Columns cols={3}>
+  <Card title="View Results" icon="bar-chart" href="#monitor-results">
+    Access bug reports and screenshots as testers submit findings.
+  </Card>
+
+  <Card title="Integrate API" icon="code" href="/authentication">
+    Automate cycles with our REST API.
+  </Card>
+
+  <Card title="Scale Testing" icon="users" href="/configuration">
+    Configure advanced options for larger projects.
+  </Card>
+</Columns>
+
+<Callout kind="success">
+  Congratulations! Your first Test IO cycle is live. Expect initial results in under an hour. Dive into [authentication](/authentication) for API integration next.
+</Callout>

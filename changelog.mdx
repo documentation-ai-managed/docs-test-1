@@ -1,0 +1,124 @@
+---
+title: Changelog
+description: Track the latest updates, improvements, and new features released in Test IO to stay informed on platform enhancements.
+---
+
+## Recent Updates
+
+Stay current with Test IO's evolution. You receive automatic notifications for major releases via your dashboard at `https://dashboard.example.com`. Review the details below to understand impacts on your crowdtesting workflows.
+
+<Callout kind="info">
+Subscribe to our RSS feed or email updates at `https://docs.example.com/changelog/feed.xml` to get instant notifications.
+</Callout>
+
+<Update label="2024-10-15" description="v1.3.0" tags={["feature", "improvement"]}>
+## New Features
+
+- Introduced AI-powered test case generation for faster crowdtesting setup.
+- Added real-time collaboration tools for QA teams to review tester feedback.
+
+## Improvements
+
+- Enhanced dashboard performance by `>40%` for large projects with `>400k` testers.
+- Improved mobile app testing coverage with new device farm integrations.
+
+## Bug Fixes
+
+- Fixed intermittent sync issues between tester assignments and project status.
+- Resolved export errors for detailed QA reports in CSV format.
+</Update>
+
+<Update label="2024-09-20" description="v1.2.0" tags={["feature", "bugfix"]}>
+## New Features
+
+- Launched advanced analytics dashboard with crowdtesting metrics and tester performance scores.
+- Integrated EPAM's quality engineering APIs for seamless professional services.
+
+## Improvements
+
+- Streamlined tester onboarding with one-click invitations.
+
+## Bug Fixes
+
+- Corrected authentication flows for multi-team accounts.
+- Patched vulnerabilities in webhook endpoints.
+
+<CodeGroup tabs="JavaScript,Python">
+````javascript
+// New webhook handler example
+const handleTestIOWebhook = async (event) => {
+  const payload = JSON.parse(event.body);
+  if (payload.event === 'tester_feedback') {
+    console.log(`New feedback from tester ID: ${payload.tester_id}`);
+  }
+};
+````
+````python
+# New webhook handler example
+import json
+
+def handle_testio_webhook(event):
+    payload = json.loads(event['body'])
+    if payload['event'] == 'tester_feedback':
+        print(f"New feedback from tester ID: {payload['tester_id']}")
+````
+</CodeGroup>
+</Update>
+
+<Update label="2024-08-10" description="v1.1.0" tags={["breaking", "feature"]}>
+## New Features
+
+- Crowdtesting marketplace with `>400k` vetted testers globally.
+- Automated migration tools from legacy QA platforms.
+
+## Breaking Changes
+
+- Deprecated old v1 API endpoints; migrate to v2 using the guide below.
+
+## Bug Fixes
+
+- Fixed project cloning errors for agile sprints.
+</Update>
+
+## Migration Guide
+
+If you use deprecated features from v1.1.0 and earlier, follow these steps to upgrade seamlessly.
+
+<Steps>
+  <Step title="Review Deprecated Endpoints" icon="alert-triangle">
+    Check your integration for `/v1/projects` calls.
+  </Step>
+  <Step title="Update to v2 API" icon="code">
+    Replace with `/v2/projects`. See code example above.
+  </Step>
+  <Step title="Test in Sandbox" icon="play">
+    Use `https://sandbox.example.com` for validation.
+  </Step>
+  <Step title="Deploy and Monitor" icon="rocket">
+    Go live and watch for webhook events.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+Run `npm update testio-sdk` or equivalent to get the latest client libraries.
+</Callout>
+
+## Upcoming Roadmap
+
+Explore what's next for Test IO's crowdtesting and QA platform.
+
+<Columns cols={3}>
+  <Card title="Q4 2024" icon="zap" href="#roadmap-q4">
+    AI-driven defect prediction and auto-triage.
+  </Card>
+  <Card title="Q1 2025" icon="shield" href="#roadmap-q1">
+    Enhanced security for enterprise compliance.
+  </Card>
+  <Card title="Q2 2025" icon="trending-up" href="#roadmap-q2">
+    Global tester expansion and performance benchmarks.
+  </Card>
+</Columns>
+
+<Expandable title="Detailed Q4 Roadmap" default-open="true">
+Coming soon: Integration with EPAM's full quality engineering suite, supporting `>50` new testing frameworks.
+</Expandable>

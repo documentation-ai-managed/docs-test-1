@@ -1,0 +1,100 @@
+---
+title: Introduction to Test IO
+description: Learn about Test IO, a fully managed software testing and QA services provider for agile teams, backed by over a decade of experience and a global community of 400k testers.
+---
+
+## Overview
+
+Test IO delivers opinionated, fully managed software testing and QA services tailored for agile teams. With over a decade of experience, Test IO partners with hundreds of iconic brands to ensure exceptional product experiences worldwide. As part of EPAM, a NYSE-listed company, Test IO leverages a diverse community of `>400k` testers alongside advanced quality engineering capabilities. Recognized by Gartner as a leader in crowdtesting, quality assurance, and application testing, Test IO helps you ship reliable software faster.
+
+You benefit from scalable testing that aligns with your sprint cycles, reducing defects and accelerating releases without building an in-house QA team.
+
+## Key Benefits
+
+Test IO streamlines your QA process with proven advantages for agile development.
+
+<Columns cols={3}>
+  <Card title="Speed" icon="zap" href="#quick-start">
+    Launch tests in minutes with on-demand crowdtesting, achieving results `<24h` for most cycles.
+  </Card>
+  <Card title="Scale" icon="users" href="/quickstart">
+    Access a global pool of `>400k` skilled testers covering diverse devices, OS, and regions.
+  </Card>
+  <Card title="Expertise" icon="shield" href="/authentication">
+    Combine crowd wisdom with professional QA engineers for comprehensive coverage.
+  </Card>
+</Columns>
+
+## Core Features
+
+Test IO offers flexible testing models to match your needs.
+
+<Tabs>
+  <Tab title="Crowdtesting" icon="users">
+    Harness real-world testing from a vast tester community. Submit your app or website, define test objectives, and receive detailed bug reports with screenshots and videos.
+    
+    <Callout kind="tip">
+      Ideal for exploratory testing across thousands of device-browser combinations.
+    </Callout>
+  </Tab>
+  <Tab title="Professional QA" icon="settings">
+    Engage EPAM-certified engineers for structured test planning, automation, and performance testing. Get customized strategies backed by enterprise-grade tools.
+  </Tab>
+</Tabs>
+
+## Quick Start
+
+Get started with Test IO in a few simple steps.
+
+<Steps>
+  <Step title="Sign Up" icon="user-plus">
+    Create your free account at `https://app.test.io` and verify your email.
+  </Step>
+  <Step title="Create Test Cycle" icon="play-circle">
+    Upload your app build or URL, select devices, and define bugs to hunt.
+  </Step>
+  <Step title="Review Results" icon="check-circle">
+    Monitor live tester progress and analyze bug reports in the dashboard.
+  </Step>
+  <Step title="Integrate" icon="code">
+    Set up webhooks for automated notifications.
+    
+    <CodeGroup tabs="JavaScript,Python">
+      ```javascript
+      const webhook = 'https://your-webhook-url.com/webhook';
+      app.post(webhook, (req, res) => {
+        if (req.body.event === 'bug_found') {
+          console.log('New bug:', req.body.bug);
+        }
+        res.status(200).send('OK');
+      });
+      ```
+      
+      ```python
+      from flask import Flask, request
+      
+      app = Flask(__name__)
+      @app.route('/webhook', methods=['POST'])
+      def webhook():
+          if request.json['event'] == 'bug_found':
+              print('New bug:', request.json['bug'])
+          return 'OK', 200
+      ```
+    </CodeGroup>
+  </Step>
+</Steps>
+
+## Next Steps
+
+<Callout kind="info">
+  Explore the full documentation to integrate Test IO into your workflow.
+</Callout>
+
+<Columns cols={2}>
+  <Card title="Quickstart Guide" icon="rocket" href="/quickstart">
+    Set up your first test cycle end-to-end.
+  </Card>
+  <Card title="Authentication" icon="lock" href="/authentication">
+    Secure your API access and manage testers.
+  </Card>
+</Columns>
